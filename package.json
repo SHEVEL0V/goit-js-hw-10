@@ -1,0 +1,27 @@
+{
+  "name": "goit-js-hw-10",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel --open -p 9999",
+    "build": "parcel build --dist-dir=docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SHEVEL0V/goit-js-hw-10.git"
+  },
+  "author": "Andriy Shevelov ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SHEVEL0V/goit-js-hw-10/issues"
+  },
+  "homepage": "https://github.com/SHEVEL0V/goit-js-hw-10#readme",
+  "devDependencies": {
+    "parcel": "^2.4.1"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  }
+}
