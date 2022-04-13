@@ -18,3 +18,17 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+.country-list{
+  display: flex;
+  flex-direction: column;
+  
+}
+.country-list li{
+  margin: 5px 5px;
+  display: flex;
+  align-items: center;
+}
+.country-list span{
+  margin-left: 10px;
+}
+ 
