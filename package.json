@@ -8,6 +8,7 @@
   "targets": {
     "main": false
   },
+  "outputForma": "esmodule",
   "scripts": {
     "dev": "parcel --open -p 9999",
     "build": "parcel build --dist-dir=docs"
