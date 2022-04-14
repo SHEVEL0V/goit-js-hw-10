@@ -32,3 +32,19 @@ body {
   margin-left: 10px;
 }
  
+.country-info{
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  font-size: 32px;
+  font-weight: 800;
+  
+}
+.bold-text{
+  font-size: 16px;
+  font-weight: 800;
+}
+.text{
+  font-weight: 500;
+}

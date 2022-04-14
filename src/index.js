@@ -18,55 +18,79 @@ input.addEventListener(
 
 function inputValue(e) {
   const valueInput = e.target.value;
-  rendeCauntry(valueInput);
+  if (valueInput !== "") {
+    fechCauntry(valueInput);
+  }
 }
-function rendeCauntry(valueInput) {
+function fechCauntry(valueInput) {
   fetchCountries(valueInput)
     .then((date) => {
       makeCards(date);
-      console.log(date);
     })
     .catch(() => {
       console.log("Error");
-      deleteHtml();
-      makeError();
     });
 }
 
 function makeCards(date) {
   if (date.length === 1) {
     makeHtmlOneCountry(date);
-  } else if (date.length < 10) {
-    makeHtmlArey(date);
-  } else {
-    deleteHtml();
+    deleteHtmlList();
+  } else if (date.length <= 10) {
+    makeHtmlAreyCountry(date);
+    deleteHtmlCards();
+  } else if (date.length > 10) {
     makeInfo();
+    deleteHtmlList();
+    deleteHtmlCards();
+  } else {
+    deleteHtmlList();
+    deleteHtmlCards();
+    makeError();
   }
 }
-function makeHtmlArey(date) {
+function makeHtmlAreyCountry(date) {
   const areyHtml = [];
   date.map((country) => {
-    areyHtml.push(`<li><svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
-    <image href="${country.flags.svg}" height="50" width="50"/></svg><span>${country.name.common}</span></li>`);
+    areyHtml.push(`
+    <li>
+      <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+      <image href="${country.flags.svg}" height="50" width="50"/>
+      </svg>
+      <span>${country.name.common}</span>
+      </li>`);
   });
 
   renderHtml(areyHtml.join(""));
 }
 function makeHtmlOneCountry(date) {
-  const country = date.country;
-  console.log(country);
-  // console.log(`<ul><li><svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
-  // <image href="${country.flags.svg}" height="50" width="50"/></svg><span>${country.name.common}</span></li>
-  // <li>Capital:${country.capital}</li>
-  // <li>Population:${country.population}</li>
-  // <li>Languages:</li><ul/>`);
+  const country = date[0];
+  const languages = Object.values(country.languages).join(" ");
+
+  const htmlCards = `
+  <ul>
+    <li>
+      <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+      <image href="${country.flags.svg}" height="50" width="50"/>
+      </svg>
+      <span class="header" >${country.name.common}</span>
+    </li>
+    <li class="bold-text">Capital:<span class="text"> ${country.capital}</span></li>
+    <li class="bold-text">Population:<span class="text"> ${country.population}</span></li>
+    <li class="bold-text">Languages: <span class="text"> ${languages}</span></li>
+  </ul>`;
+
+  infoEl.insertAdjacentHTML("beforeend", htmlCards);
 }
 
 function renderHtml(html) {
   listEl.insertAdjacentHTML("beforeend", html);
 }
-function deleteHtml() {
+function deleteHtmlList() {
   listEl.innerHTML = "";
+}
+function deleteHtmlCards() {
+  infoEl.innerHTML = "";
 }
 
 function makeInfo() {
