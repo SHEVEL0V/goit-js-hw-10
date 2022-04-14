@@ -4,7 +4,6 @@
   "description": "",
   "browserslist": "> 0.5%, last 10 versions, not dead",
   "source": "src/index.html",
-  "outputForma": "esmodule",
   "scripts": {
     "dev": "parcel --open -p 9999",
     "build": "parcel build --dist-dir=docs"
