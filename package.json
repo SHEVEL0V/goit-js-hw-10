@@ -2,7 +2,7 @@
   "name": "goit-js-hw-10",
   "version": "1.0.0",
   "description": "",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": "> 0.5%, last 10 versions, not dead",
   "source": "src/index.html",
   "outputForma": "esmodule",
   "scripts": {
