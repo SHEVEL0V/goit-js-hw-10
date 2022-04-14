@@ -17,7 +17,7 @@ input.addEventListener(
 );
 
 function inputValue(e) {
-  const valueInput = e.target.value;
+  const valueInput = e.target.value.trim();
   if (valueInput !== "") {
     fechCauntry(valueInput);
   }
