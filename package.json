@@ -4,10 +4,6 @@
   "description": "",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "src/index.html",
-  "main": "docs/main.js",
-  "targets": {
-    "main": false
-  },
   "outputForma": "esmodule",
   "scripts": {
     "dev": "parcel --open -p 9999",
