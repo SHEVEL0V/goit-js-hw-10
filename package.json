@@ -2,7 +2,6 @@
   "name": "goit-js-hw-10",
   "version": "1.0.0",
   "description": "",
-  "browserslist": "> 0.5%, last 10 versions, not dead",
   "source": "src/index.html",
   "scripts": {
     "dev": "parcel --open -p 9999",
